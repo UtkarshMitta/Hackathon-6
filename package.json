@@ -1,5 +1,5 @@
 {
-  "name": "cardiac-rehab-companion",
+  "name": "heartpath",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,9 +12,13 @@
     "next": "^15.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "ai": "^6.0.0",
+    "@ai-sdk/react": "^3.0.0",
+    "@anthropic-ai/sdk": "^0.39.0",
     "lucide-react": "^0.475.0",
     "clsx": "^2.1.1",
-    "tailwind-merge": "^2.6.0"
+    "tailwind-merge": "^2.6.0",
+    "framer-motion": "^12.6.3"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

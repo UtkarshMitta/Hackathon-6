@@ -9,16 +9,16 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "RehabCompanion — Cardiac Rehab with You",
+  title: "HeartPath — Your Heart Healed You Once",
   description:
-    "Your personal cardiac rehabilitation companion. Stay on track, stay safe, stay connected to your care team.",
+    "HeartPath is your cardiac rehabilitation companion. Every session, every walk, every check-in brings your heart back to life.",
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
-  themeColor: "#faf8f5",
+  themeColor: "#FFF8F0",
 };
 
 export default function RootLayout({
@@ -28,7 +28,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable}>
-      <body>{children}</body>
+      <body className="font-sans bg-background text-foreground">{children}</body>
     </html>
   );
 }

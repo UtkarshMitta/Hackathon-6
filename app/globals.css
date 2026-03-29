@@ -3,39 +3,50 @@
 @tailwind utilities;
 
 :root {
-  /* Warm off-white background */
-  --background: #faf8f5;
-  --foreground: #1c1917;
+  /* HeartPath color palette */
+  --background: #FFF8F0;
+  --foreground: #1a1a2e;
 
-  /* Card surface */
   --card: #ffffff;
-  --card-foreground: #1c1917;
+  --card-foreground: #1a1a2e;
 
-  /* Primary: warm coral-rose — encouraging, warm, medical-safe */
-  --primary: #e05c5c;
+  /* Primary: deep warm rose */
+  --primary: #E8446D;
   --primary-foreground: #ffffff;
 
   /* Muted neutrals */
-  --muted: #f0ece6;
-  --muted-foreground: #78716c;
+  --muted: #F5EDE4;
+  --muted-foreground: #7a6e6e;
 
-  /* Accent: calm teal — trust, calm, clinical */
-  --accent: #2a9d8f;
+  /* Accent: healing green */
+  --accent: #4CAF50;
   --accent-foreground: #ffffff;
 
-  /* Success: soft green */
-  --success: #4caf7d;
-  --success-foreground: #ffffff;
+  /* Navy for headings */
+  --navy: #1a1a2e;
 
-  /* Warning: amber */
-  --warning: #f59e0b;
+  /* Alert red */
+  --danger: #DC2626;
+  --danger-foreground: #ffffff;
+
+  /* Warm amber */
+  --warning: #F59E0B;
 
   /* Borders */
-  --border: #e8e2da;
-  --ring: #e05c5c;
+  --border: #EDD5C0;
+  --ring: #E8446D;
 
   /* Corner radius */
-  --radius: 0.875rem;
+  --radius: 1rem;
+
+  /* Heart glow colors per stage */
+  --heart-stage-1: #9ca3af;
+  --heart-stage-2: #f9a8d4;
+  --heart-stage-3: #f87171;
+  --heart-stage-4: #e8446d;
+  --heart-stage-5: #e8446d;
+  --heart-stage-6: #e8446d;
+  --heart-stage-7: #e8446d;
 }
 
 * {
@@ -47,19 +58,64 @@
 html,
 body {
   height: 100%;
-  max-width: 430px;
-  margin: 0 auto;
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Scrollbar hide utility */
+/* Mobile phone shell — cap at 430px */
+#__next,
+main {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  position: relative;
+  overflow-x: hidden;
+}
+
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+/* Heart pulse keyframe */
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14% { transform: scale(1.06); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.04); }
+  56% { transform: scale(1); }
+}
+
+.heart-pulse {
+  animation: heartbeat 2.4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.03); opacity: 0.92; }
+}
+
+.heart-breathe {
+  animation: breathe 3s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* Safe area padding for mobile */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
