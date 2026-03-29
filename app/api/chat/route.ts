@@ -87,7 +87,7 @@ export async function POST(req: Request) {
   }
 
   const result = streamText({
-    model: "anthropic/claude-sonnet-4-20250514",
+    model: "anthropic/claude-opus-4.6",
     system: buildSystemPrompt(),
     messages: await convertToModelMessages(messages),
     maxOutputTokens: 300,
