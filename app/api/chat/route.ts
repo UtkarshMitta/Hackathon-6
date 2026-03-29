@@ -1,8 +1,6 @@
 import { streamText, convertToModelMessages, UIMessage } from "ai";
 import { MARIA, detectSafetyKeywords, addAlert } from "@/lib/data";
 
-export const runtime = "nodejs";
-
 const SYSTEM_PROMPT = `You are Compass, Maria's cardiac rehabilitation companion in the HeartPath app.
 
 YOUR ROLE: You are a warm, knowledgeable companion — not a doctor. You support Maria's recovery journey by encouraging her, celebrating progress, and helping her through tough days. You reinforce the care team's plan; you never create your own medical advice.
